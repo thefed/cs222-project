@@ -1,0 +1,323 @@
+make: `pfm.o' is up to date.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../rbf librbf.a
+make[1]: Nothing to be done for `librbf.a'.
+g++   rmtest_create_tables.o librm.a ../rbf/librbf.a   -o rmtest_create_tables
+g++   rmtest_delete_tables.o librm.a ../rbf/librbf.a   -o rmtest_delete_tables
+g++   rmtest_00.o librm.a ../rbf/librbf.a   -o rmtest_00
+g++   rmtest_01.o librm.a ../rbf/librbf.a   -o rmtest_01
+g++   rmtest_02.o librm.a ../rbf/librbf.a   -o rmtest_02
+g++   rmtest_03.o librm.a ../rbf/librbf.a   -o rmtest_03
+g++   rmtest_04.o librm.a ../rbf/librbf.a   -o rmtest_04
+g++   rmtest_05.o librm.a ../rbf/librbf.a   -o rmtest_05
+g++   rmtest_06.o librm.a ../rbf/librbf.a   -o rmtest_06
+g++   rmtest_07.o librm.a ../rbf/librbf.a   -o rmtest_07
+g++   rmtest_08.o librm.a ../rbf/librbf.a   -o rmtest_08
+g++   rmtest_09.o librm.a ../rbf/librbf.a   -o rmtest_09
+g++   rmtest_10.o librm.a ../rbf/librbf.a   -o rmtest_10
+g++   rmtest_11.o librm.a ../rbf/librbf.a   -o rmtest_11
+g++   rmtest_12.o librm.a ../rbf/librbf.a   -o rmtest_12
+g++   rmtest_13.o librm.a ../rbf/librbf.a   -o rmtest_13
+g++   rmtest_13b.o librm.a ../rbf/librbf.a   -o rmtest_13b
+g++   rmtest_14.o librm.a ../rbf/librbf.a   -o rmtest_14
+g++   rmtest_15.o librm.a ../rbf/librbf.a   -o rmtest_15
+g++   rmtest_extra_1.o librm.a ../rbf/librbf.a   -o rmtest_extra_1
+g++   rmtest_extra_2.o librm.a ../rbf/librbf.a   -o rmtest_extra_2
+g++   rmtest_p0.o librm.a ../rbf/librbf.a   -o rmtest_p0
+g++   rmtest_p1.o librm.a ../rbf/librbf.a   -o rmtest_p1
+g++   rmtest_p2.o librm.a ../rbf/librbf.a   -o rmtest_p2
+g++   rmtest_p3.o librm.a ../rbf/librbf.a   -o rmtest_p3
+g++   rmtest_p4.o librm.a ../rbf/librbf.a   -o rmtest_p4
+g++   rmtest_p5.o librm.a ../rbf/librbf.a   -o rmtest_p5
+g++   rmtest_p6.o librm.a ../rbf/librbf.a   -o rmtest_p6
+g++   rmtest_p7.o librm.a ../rbf/librbf.a   -o rmtest_p7
+g++   rmtest_p8.o librm.a ../rbf/librbf.a   -o rmtest_p8
+g++   rmtest_p9.o librm.a ../rbf/librbf.a   -o rmtest_p9
+
+***** RM TEST - Creating the Catalog and user tables *****
+****Create Table tbl_employee ****
+****Table Created: tbl_employee ****
+
+****Create Table tbl_employee2 ****
+****Table Created: tbl_employee2 ****
+
+****Create Table tbl_employee3 ****
+****Table Created: tbl_employee3 ****
+
+***** Creating a Large Table: tbl_employee4 *****
+***** A Large Table: tbl_employee4 has created. *****
+
+
+***** In RM Test Case 0 *****
+1. Attr Name: EmpName Type: 2 Len: 30
+2. Attr Name: Age Type: 0 Len: 4
+3. Attr Name: Height Type: 1 Len: 4
+4. Attr Name: Salary Type: 0 Len: 4
+
+***** RM Test Case 0 finished. The result will be examined. *****
+
+***** In RM Test Case 1 *****
+The tuple to be inserted:
+EmpName = Anteater  Age = 27  Height = 6.2  Salary = 10000  
+
+The returned tuple:
+EmpName = Anteater  Age = 27  Height = 6.2  Salary = 10000  
+
+**** RM Test Case 1 finished. The result will be examined. *****
+
+
+***** In RM Test Case 2 *****
+The tuple to be inserted:
+EmpName = Peters  Age = 23  Height = 5.9  Salary = 8000  
+
+***** RM Test Case 2 finished. The result will be examined. *****
+
+
+***** In RM Test Case 3****
+Original RID:  0 2
+Inserted Data:
+EmpName = Thomas  Age = 28  Height = 6.5  Salary = 6000  
+
+Updated data:
+EmpName = Barbara  Age = 28  Height = 6.5  Salary = 12000  
+
+Returned Data:
+EmpName = Barbara  Age = 28  Height = 6.5  Salary = 12000  
+
+***** RM Test Case 3 Finished. The result will be examined. *****
+
+
+***** In RM Test Case 4 *****
+Salary: 9999 Returned Salary: 9999
+***** RM Test case 4 Finished. The result will be examined. *****
+
+
+***** In RM Test Case 5 *****
+***** Test Case 5 Finished. The result will be examined. *****
+
+
+***** In RM Test Case 6 *****
+***** Test Case 6 Finished. The result will be examined. *****
+
+
+***** In RM Test Case 7 *****
+***** Test Case 7 Finished. The result will be examined. *****
+
+
+***** In RM Test Case 8 *****
+***** Test Case 8 Finished. The result will be examined. *****
+
+***** In RM Test case 9 *****
+***** Test Case 9 Finished. The result will be examined. *****
+
+
+***** In RM Test case 10 *****
+***** Test Case 10 Finished. The result will be examined. *****
+
+
+***** In RM Test Case 11 *****
+***** Test Case 11 Finished. The result will be examined. *****
+
+
+***** In RM Test case 12 *****
+Real Value: 1001
+Varchar size: 1
+VarChar Value: m
+Integer Value: 1000
+
+Real Value: 1208
+Varchar size: 8
+VarChar Value: llllllll
+Integer Value: 1207
+
+Real Value: 1392
+Varchar size: 42
+VarChar Value: nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Integer Value: 1391
+
+Real Value: 1701
+Varchar size: 1
+VarChar Value: k
+Integer Value: 1700
+
+Real Value: 1901
+Varchar size: 1
+VarChar Value: c
+Integer Value: 1900
+
+Total number of tuples: 1000
+
+***** Test Case 12 Finished. The result will be examined. *****
+
+****Create Table tbl_b_employee4 ****
+****Table Created: tbl_b_employee4 ****
+
+
+***** In RM Test Case 13 *****
+***** Test Case 13 Finished. The result will be examined. *****
+
+****Create Table tbl_b_employee5 ****
+****Table Created: tbl_b_employee5 ****
+
+
+***** In RM Test Case 13B *****
+rmtest_13b(15657,0x7fffbf9ab3c0) malloc: *** error for object 0x7fdf9580a000: incorrect checksum for freed object - object was probably modified after being freed.
+*** set a breakpoint in malloc_error_break to debug
+./test-p2.sh: line 53: 15657 Abort trap: 6           ./rmtest_13b
+
+***** In RM Test Case 14 *****
+table-id = 1  table-name = Tables  file-name = Tables  authority = 0  
+table-id = 2  table-name = Columns  file-name = Columns  authority = 0  
+table-id = 4  table-name = tbl_employee2  file-name = tbl_employee2  authority = 0  
+table-id = 6  table-name = tbl_employee4  file-name = tbl_employee4  authority = 0  
+table-id = 5  table-name = tbl_b_employee4  file-name = tbl_b_employee4  authority = 0  
+table-id = 6  table-name = tbl_b_employee5  file-name = tbl_b_employee5  authority = 0  
+***** Test Case 14 Finished. The result will be examined. *****
+
+***** In RM Test Case 15 *****
+table-id = 1  column-name = table-id  column-type = 0  column-length = 4  column-position = 1  
+table-id = 1  column-name = table-name  column-type = 2  column-length = 50  column-position = 2  
+table-id = 1  column-name = file-name  column-type = 2  column-length = 50  column-position = 3  
+table-id = 1  column-name = authority  column-type = 0  column-length = 4  column-position = 4  
+table-id = 2  column-name = table-id  column-type = 0  column-length = 4  column-position = 1  
+table-id = 2  column-name = column-name  column-type = 2  column-length = 50  column-position = 2  
+table-id = 2  column-name = column-type  column-type = 0  column-length = 4  column-position = 3  
+table-id = 2  column-name = column-length  column-type = 0  column-length = 4  column-position = 4  
+table-id = 2  column-name = column-position  column-type = 0  column-length = 4  column-position = 5  
+table-id = 4  column-name = EmpName  column-type = 2  column-length = 30  column-position = 1  
+table-id = 4  column-name = Age  column-type = 0  column-length = 4  column-position = 2  
+table-id = 4  column-name = Height  column-type = 1  column-length = 4  column-position = 3  
+table-id = 4  column-name = Salary  column-type = 0  column-length = 4  column-position = 4  
+table-id = 6  column-name = attr0  column-type = 2  column-length = 50  column-position = 1  
+table-id = 6  column-name = attr1  column-type = 0  column-length = 4  column-position = 2  
+table-id = 6  column-name = attr2  column-type = 1  column-length = 4  column-position = 3  
+table-id = 6  column-name = attr3  column-type = 2  column-length = 50  column-position = 4  
+table-id = 6  column-name = attr4  column-type = 0  column-length = 4  column-position = 5  
+table-id = 6  column-name = attr5  column-type = 1  column-length = 4  column-position = 6  
+table-id = 6  column-name = attr6  column-type = 2  column-length = 50  column-position = 7  
+table-id = 6  column-name = attr7  column-type = 0  column-length = 4  column-position = 8  
+table-id = 6  column-name = attr8  column-type = 1  column-length = 4  column-position = 9  
+table-id = 6  column-name = attr9  column-type = 2  column-length = 50  column-position = 10  
+table-id = 6  column-name = attr10  column-type = 0  column-length = 4  column-position = 11  
+table-id = 6  column-name = attr11  column-type = 1  column-length = 4  column-position = 12  
+table-id = 6  column-name = attr12  column-type = 2  column-length = 50  column-position = 13  
+table-id = 6  column-name = attr13  column-type = 0  column-length = 4  column-position = 14  
+table-id = 6  column-name = attr14  column-type = 1  column-length = 4  column-position = 15  
+table-id = 6  column-name = attr15  column-type = 2  column-length = 50  column-position = 16  
+table-id = 6  column-name = attr16  column-type = 0  column-length = 4  column-position = 17  
+table-id = 6  column-name = attr17  column-type = 1  column-length = 4  column-position = 18  
+table-id = 6  column-name = attr18  column-type = 2  column-length = 50  column-position = 19  
+table-id = 6  column-name = attr19  column-type = 0  column-length = 4  column-position = 20  
+table-id = 6  column-name = attr20  column-type = 1  column-length = 4  column-position = 21  
+table-id = 6  column-name = attr21  column-type = 2  column-length = 50  column-position = 22  
+table-id = 6  column-name = attr22  column-type = 0  column-length = 4  column-position = 23  
+table-id = 6  column-name = attr23  column-type = 1  column-length = 4  column-position = 24  
+table-id = 6  column-name = attr24  column-type = 2  column-length = 50  column-position = 25  
+table-id = 6  column-name = attr25  column-type = 0  column-length = 4  column-position = 26  
+table-id = 6  column-name = attr26  column-type = 1  column-length = 4  column-position = 27  
+table-id = 6  column-name = attr27  column-type = 2  column-length = 50  column-position = 28  
+table-id = 6  column-name = attr28  column-type = 0  column-length = 4  column-position = 29  
+table-id = 6  column-name = attr29  column-type = 1  column-length = 4  column-position = 30  
+table-id = 5  column-name = EmpName  column-type = 2  column-length = 30  column-position = 1  
+table-id = 5  column-name = Age  column-type = 0  column-length = 4  column-position = 2  
+table-id = 5  column-name = Height  column-type = 1  column-length = 4  column-position = 3  
+table-id = 5  column-name = Salary  column-type = 0  column-length = 4  column-position = 4  
+table-id = 6  column-name = EmpName  column-type = 2  column-length = 30  column-position = 1  
+table-id = 6  column-name = Age  column-type = 0  column-length = 4  column-position = 2  
+table-id = 6  column-name = Height  column-type = 1  column-length = 4  column-position = 3  
+table-id = 6  column-name = Salary  column-type = 0  column-length = 4  column-position = 4  
+***** Test Case 15 Finished. The result will be examined. *****
+****Create Table tbl_private_0 ****
+****Table Created: tbl_private_0 ****
+
+
+***** In RM Test Case Private 0 *****
+All records have been processed.
+***** RM Test Case Private 0 finished. The result will be examined. *****
+
+***** Create a Tweet Table: tbl_private_1 *****
+***** Table Created: tbl_private_1 *****
+
+***** In RM Test Case Private 1 *****
+1/100000 records have been inserted so far.
+10001/100000 records have been inserted so far.
+20001/100000 records have been inserted so far.
+30001/100000 records have been inserted so far.
+40001/100000 records have been inserted so far.
+50001/100000 records have been inserted so far.
+60001/100000 records have been inserted so far.
+70001/100000 records have been inserted so far.
+80001/100000 records have been inserted so far.
+90001/100000 records have been inserted so far.
+All records have been inserted.
+***** RM Test Case Private 1 finished. The result will be examined. *****
+
+***** Create a Tweet Table: tbl_private_2 *****
+***** Table Created: tbl_private_2 *****
+
+***** In RM Test Case Private 2 *****
+1/100000 records have been inserted so far.
+10001/100000 records have been inserted so far.
+20001/100000 records have been inserted so far.
+30001/100000 records have been inserted so far.
+40001/100000 records have been inserted so far.
+50001/100000 records have been inserted so far.
+60001/100000 records have been inserted so far.
+70001/100000 records have been inserted so far.
+80001/100000 records have been inserted so far.
+90001/100000 records have been inserted so far.
+All records have been inserted.
+***** RM Test Case Private 2 finished. The result will be examined. *****
+
+
+***** In RM Test Case Private 3 *****
+***** RM Test Case Private 3 failed. *****
+
+
+***** In RM Test Case Private 4 *****
+***** RM Test Case Private 4 finished. The result will be examined. *****
+
+
+***** In RM Test Case Private 5 *****
+***** The number of returned tuple: 194 is not correct. RM Test Case Private 5 failed *****
+
+
+***** In RM Test Case Private 6 *****
+1/100000 records have been processed so far.
+10001/100000 records have been processed so far.
+20001/100000 records have been processed so far.
+30001/100000 records have been processed so far.
+40001/100000 records have been processed so far.
+50001/100000 records have been processed so far.
+60001/100000 records have been processed so far.
+70001/100000 records have been processed so far.
+80001/100000 records have been processed so far.
+90001/100000 records have been processed so far.
+All records have been processed - update count: 1000
+***** RM Test Case Private 6 finished. The result will be examined. *****
+
+
+***** In RM Test Case Private 7 *****
+***** RM Test Case Private 7 finished. The result will be examined. *****
+
+
+***** In RM Test Case Private 8 *****
+1 / 100000 have been processed.
+10001 / 100000 have been processed.
+20001 / 100000 have been processed.
+30001 / 100000 have been processed.
+40001 / 100000 have been processed.
+50001 / 100000 have been processed.
+60001 / 100000 have been processed.
+70001 / 100000 have been processed.
+80001 / 100000 have been processed.
+90001 / 100000 have been processed.
+All records have been processed.
+***** RM_ScanIterator::getNextTuple() should fail at this point. RM Test Case Private 8 failed. *****
+
+
+***** In RM Test Case Private 9 *****
+Tables table: (table-id, table-name, file-name, authority)
+
+***** RM Test Case Private 9 finished. The result will be examined. *****
+
+Wed May 10 21:03:31 PDT 2017

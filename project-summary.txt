@@ -1,0 +1,33 @@
+# summary of 4 projects
+# 4/22/2017
+
+implemented APIs:
+
+# project 1
+class hierarchy:
+PagedFileManager (PFM):
+- createFile, destroyFile, openFile, closeFile
+
+FileHandle:
+- readPage, writePage, appendPage, getNumberOfPages, collectCounterValues
+
+RecordBasedFileManager (RBFM):
+- create/destroy/open/close File (use a private member: PagedFileManager *pfm = PagedFileManager::instance();)
+- CRUD operations of record: insertRecord, readRecord, updateRecord, deleteRecord
+- readAttribute(attrName)
+
+
+# project 2
+Relation Manager (RM):
+- create/deleteCatalog, create/deleteTable
+- getAttributes(tableName)
+- insert/read/delete/update tuple (same as RBFM::CRUD)
+- scan (returns an iterator to allow the caller to call getNext())
+
+# project 3
+Index Manager (IX)
+
+
+# project 4
+Query Engine (QE)
+

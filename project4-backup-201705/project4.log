@@ -1,0 +1,287 @@
+rm -f *.a *.o *~ Tables* Columns* left* right* large*	qetest_??
+rm -f *.o *.a rmtest_?? rmtest_extra_? 
+rm -f *.a *.o rbftest? rbftest??
+rm -f *.o *.a ixtest_?? ixtest_extra_??
+rm -f *.a *.o rbftest? rbftest??
+rm -f *.a *.o rbftest? rbftest??
+g++  -Wall -I.. -g -std=c++0x    -c -o qe.o qe.cc
+ar rv libqe.a qe.o
+a - qe.o
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_01.o qetest_01.cc
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../ix libix.a
+g++  -Wall -I.. -g -std=c++0x    -c -o ix.o ix.cc
+ar rv libix.a ix.o
+a - ix.o
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../rm librm.a
+g++  -Wall -I.. -g -std=c++0x    -c -o rm.o rm.cc
+ar rv librm.a rm.o
+a - rm.o
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../rbf librbf.a
+g++  -Wall -I.. -g -std=c++0x    -c -o pfm.o pfm.cc
+ar rv librbf.a pfm.o
+a - pfm.o
+g++  -Wall -I.. -g -std=c++0x    -c -o rbfm.o rbfm.cc
+ar rv librbf.a rbfm.o
+a - rbfm.o
+g++   qetest_01.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_01
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_02.o qetest_02.cc
+g++   qetest_02.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_02
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_03.o qetest_03.cc
+g++   qetest_03.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_03
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_04.o qetest_04.cc
+g++   qetest_04.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_04
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_05.o qetest_05.cc
+g++   qetest_05.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_05
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_06.o qetest_06.cc
+g++   qetest_06.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_06
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_07.o qetest_07.cc
+g++   qetest_07.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_07
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_08.o qetest_08.cc
+g++   qetest_08.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_08
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_09.o qetest_09.cc
+g++   qetest_09.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_09
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_10.o qetest_10.cc
+g++   qetest_10.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_10
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_11.o qetest_11.cc
+g++   qetest_11.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_11
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_12.o qetest_12.cc
+g++   qetest_12.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_12
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_13.o qetest_13.cc
+g++   qetest_13.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_13
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_14.o qetest_14.cc
+g++   qetest_14.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_14
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_15.o qetest_15.cc
+g++   qetest_15.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_15
+g++  -Wall -I.. -g -std=c++0x    -c -o qetest_16.o qetest_16.cc
+g++   qetest_16.o libqe.a ../ix/libix.a ../rm/librm.a ../rbf/librbf.a   -o qetest_16
+expected = 39, actual= 39
+
+***** In QE Test Case 6 *****
+right.C 25  right.D 0
+right.C 26  right.D 1
+right.C 27  right.D 2
+right.C 28  right.D 3
+right.C 29  right.D 4
+right.C 30  right.D 5
+right.C 31  right.D 6
+right.C 32  right.D 7
+right.C 33  right.D 8
+right.C 34  right.D 9
+right.C 35  right.D 10
+right.C 36  right.D 11
+right.C 37  right.D 12
+right.C 38  right.D 13
+right.C 39  right.D 14
+right.C 40  right.D 15
+right.C 41  right.D 16
+right.C 42  right.D 17
+right.C 43  right.D 18
+right.C 44  right.D 19
+right.C 45  right.D 20
+right.C 46  right.D 21
+right.C 47  right.D 22
+right.C 48  right.D 23
+right.C 49  right.D 24
+right.C 50  right.D 25
+right.C 51  right.D 26
+right.C 52  right.D 27
+right.C 53  right.D 28
+right.C 54  right.D 29
+right.C 55  right.D 30
+right.C 56  right.D 31
+right.C 57  right.D 32
+right.C 58  right.D 33
+right.C 59  right.D 34
+right.C 60  right.D 35
+right.C 61  right.D 36
+right.C 62  right.D 37
+right.C 63  right.D 38
+right.C 64  right.D 39
+right.C 65  right.D 40
+right.C 66  right.D 41
+right.C 67  right.D 42
+right.C 68  right.D 43
+right.C 69  right.D 44
+right.C 70  right.D 45
+right.C 71  right.D 46
+right.C 72  right.D 47
+right.C 73  right.D 48
+right.C 74  right.D 49
+right.C 75  right.D 50
+right.C 76  right.D 51
+right.C 77  right.D 52
+right.C 78  right.D 53
+right.C 79  right.D 54
+right.C 80  right.D 55
+right.C 81  right.D 56
+right.C 82  right.D 57
+right.C 83  right.D 58
+right.C 84  right.D 59
+right.C 85  right.D 60
+right.C 86  right.D 61
+right.C 87  right.D 62
+right.C 88  right.D 63
+right.C 89  right.D 64
+right.C 90  right.D 65
+right.C 91  right.D 66
+right.C 92  right.D 67
+right.C 93  right.D 68
+right.C 94  right.D 69
+right.C 95  right.D 70
+right.C 96  right.D 71
+right.C 97  right.D 72
+right.C 98  right.D 73
+right.C 99  right.D 74
+right.C 100  right.D 75
+right.C 101  right.D 76
+right.C 102  right.D 77
+right.C 103  right.D 78
+right.C 104  right.D 79
+right.C 105  right.D 80
+right.C 106  right.D 81
+right.C 107  right.D 82
+right.C 108  right.D 83
+right.C 109  right.D 84
+right.C 110  right.D 85
+right.C 111  right.D 86
+right.C 112  right.D 87
+right.C 113  right.D 88
+right.C 114  right.D 89
+right.C 115  right.D 90
+right.C 116  right.D 91
+right.C 117  right.D 92
+right.C 118  right.D 93
+right.C 119  right.D 94
+right.C 120  right.D 95
+right.C 121  right.D 96
+right.C 122  right.D 97
+right.C 123  right.D 98
+right.C 124  right.D 99
+***** QE Test Case 6 finished. The result will be examined. *****
+**** Creating partitions of left ****
+left partition(1) has 31 pages, 5000 tuples
+left partition(2) has 31 pages, 5000 tuples
+left partition(3) has 31 pages, 5000 tuples
+left partition(4) has 31 pages, 5000 tuples
+left partition(5) has 31 pages, 5000 tuples
+left partition(6) has 31 pages, 5000 tuples
+left partition(7) has 31 pages, 5000 tuples
+left partition(8) has 31 pages, 5000 tuples
+left partition(9) has 31 pages, 5000 tuples
+left partition(10) has 31 pages, 5000 tuples
+**** End creating partitions of left ****
+**** Creating partitions of right ****
+right partition(1) has 31 pages, 5000 tuples
+right partition(2) has 31 pages, 5000 tuples
+right partition(3) has 31 pages, 5000 tuples
+right partition(4) has 31 pages, 5000 tuples
+right partition(5) has 31 pages, 5000 tuples
+right partition(6) has 31 pages, 5000 tuples
+right partition(7) has 31 pages, 5000 tuples
+right partition(8) has 31 pages, 5000 tuples
+right partition(9) has 31 pages, 5000 tuples
+right partition(10) has 31 pages, 5000 tuples
+**** End creating partitions of right ****
+
+**** Scanning left_join1_part ****
+
+**** Scanning left_join2_part ****
+
+**** Scanning left_join3_part ****
+
+**** Scanning left_join4_part ****
+
+**** Scanning left_join5_part ****
+
+**** Scanning left_join6_part ****
+
+**** Scanning left_join7_part ****
+
+**** Scanning left_join8_part ****
+
+**** Scanning left_join9_part ****
+
+**** Scanning left_join10_part ****
+**** Last partition scanned ****
+**** exp: 49975, ret: 49975 ****
+**** Creating partitions of left ****
+left partition(1) has 31 pages, 5000 tuples
+left partition(2) has 31 pages, 5000 tuples
+left partition(3) has 31 pages, 5000 tuples
+left partition(4) has 31 pages, 5000 tuples
+left partition(5) has 31 pages, 5000 tuples
+left partition(6) has 31 pages, 5000 tuples
+left partition(7) has 31 pages, 5000 tuples
+left partition(8) has 31 pages, 5000 tuples
+left partition(9) has 31 pages, 5000 tuples
+left partition(10) has 31 pages, 5000 tuples
+**** End creating partitions of left ****
+**** Creating partitions of right ****
+right partition(1) has 31 pages, 5000 tuples
+right partition(2) has 31 pages, 5000 tuples
+right partition(3) has 31 pages, 5000 tuples
+right partition(4) has 31 pages, 5000 tuples
+right partition(5) has 31 pages, 5000 tuples
+right partition(6) has 31 pages, 5000 tuples
+right partition(7) has 31 pages, 5000 tuples
+right partition(8) has 31 pages, 5000 tuples
+right partition(9) has 31 pages, 5000 tuples
+right partition(10) has 31 pages, 5000 tuples
+**** End creating partitions of right ****
+
+**** Scanning left_join1_part ****
+
+**** Scanning left_join2_part ****
+
+**** Scanning left_join3_part ****
+**** GROUP BY attribute(group.B) ****
+**** Create group(tmp_group_1) ****
+**** Create group(tmp_group_2) ****
+**** Create group(tmp_group_3) ****
+**** Create group(tmp_group_4) ****
+**** Create group(tmp_group_5) ****
+**** 5 groups created based on (group.B) ****
+
+**** In Group (tmp_group_1) ****
+
+**** In Group (tmp_group_2) ****
+
+**** In Group (tmp_group_3) ****
+
+**** In Group (tmp_group_4) ****
+
+**** In Group (tmp_group_5) ****
+exp = 5, ret = 5
+**** Clean group(tmp_group_1) ****
+**** Clean group(tmp_group_2) ****
+**** Clean group(tmp_group_3) ****
+**** Clean group(tmp_group_4) ****
+**** Clean group(tmp_group_5) ****
+**** GROUP BY attribute(group.B) ****
+**** Create group(tmp_group_1) ****
+**** Create group(tmp_group_2) ****
+**** Create group(tmp_group_3) ****
+**** Create group(tmp_group_4) ****
+**** Create group(tmp_group_5) ****
+**** 5 groups created based on (group.B) ****
+
+**** In Group (tmp_group_1) ****
+
+**** In Group (tmp_group_2) ****
+
+**** In Group (tmp_group_3) ****
+
+**** In Group (tmp_group_4) ****
+
+**** In Group (tmp_group_5) ****
+**** Clean group(tmp_group_1) ****
+**** Clean group(tmp_group_2) ****
+**** Clean group(tmp_group_3) ****
+**** Clean group(tmp_group_4) ****
+**** Clean group(tmp_group_5) ****
+rm -f *.a *.o *~ Tables* Columns* left* right* large*	qetest_??
+rm -f *.o *.a rmtest_?? rmtest_extra_? 
+rm -f *.a *.o rbftest? rbftest??
+rm -f *.o *.a ixtest_?? ixtest_extra_??
+rm -f *.a *.o rbftest? rbftest??
+rm -f *.a *.o rbftest? rbftest??

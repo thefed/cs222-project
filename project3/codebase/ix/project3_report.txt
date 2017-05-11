@@ -1,0 +1,80 @@
+1. Basic information
+Team number (e.g., 01) : 05
+#1 Student ID : 35123258
+#1 Student Name : Huan Chen
+#2 Student ID : 71289214
+#2 Student Name : Ailan He
+OS (bit) : Windows 7 (64)
+gcc version : 4.8.1
+
+
+2. Meta-data page in an index file
+- Show your meta-data page of an index design if you have any. 
+	The last 4 bytes within a 4096 bytes page is always reserved for storing root page number.
+	
+3. Index Entry Format
+- Show your index entry design (structure). 
+	typedef struct{
+		int key;
+		int pageId;
+	}IntIndex; // Index entry of TypeInt
+
+	typedef struct{
+		float key;
+		int pageId;
+	}FloatIndex; // Index entry of TypeReal
+
+	We do not use a specific struct for varchar type entry in our code, however, it also has two parts, char *key and int pageId.
+
+4. Page Format
+- Show your internal-page (non-leaf node) design.
+From the beginning of each non-leaf node (page), we have the following variables (data):
+isLeafPage, m, p0, k1, p1, k2, p2, ..., k_m, p_m, for varchar type non-leaf node, there are additional variables at the end of page, namely slot directory (entryOffset_1 to entryOffset_n) and number of slots (slotCount), pointer of free space (ptrFreeSpace).
+- Details of variables:
+	bool isLeafPage; // If true, this page is leaf page, otherwise, it's a non-leaf page, 1 byte.
+	int m; // Number of valid entries in page, not including the deleted ones, 4 bytes.
+	// For each index page, there are m keys and (m+1) child page pointers (numbers), for short, we denote child page number as p0, p1, p2, ..., pm, denote keys as k1, k2, ..., km. These index entries are stored from the 5th byte.
+	int p0; // The left most child page number, for short, denoted as p0
+	KeyType k1; // The fisrt key in this page, for short, denote as k0, KeyType can be int, float or char *
+	int p1
+
+- Show your leaf-page (leaf node) design.
+From the beginning of each leaf node (page), we have the following variables (data):
+isLeafPage, m, prev, next, key1, rid1, key2, rid2, ..., key_m, rid_m, [free space between...]entryOffset_n, ..., entryOffset_2, entryOffset_1, slotCount, ptrFreeSpace (till 4092 bytes)
+For simplicity and consistency, we also do not store any data in the last 4 bytes in page.
+- Details of variables:
+Suppose there are m valid entries inside and n slots in the slot directory residing at the end of page. However, m may not equal to n when deletion happens, as we do not decrease number of slots (slotCount) when deleting entries. Insdead, we set the entryOffset of deleted entry to -1 and update the influenced entry offsets with a positive value.
+	int m; // Number of valid data entries in page
+	int prev; // Previous leaf page number, if current leaf node has no previous page, prev = -1, otherwise, prev >= 0
+	int next; // Next leaf page number, if current leaf has no next page, next = -1, otherwise, next >= 0
+
+key1 to key_m are the same as those in non-leaf node, each rid.pageNum and rid.slotNum are stored right after its corresponding key.
+The slot directory, containing entryOffset_1 to entryOffset_n. EntryOffset is used for visiting varChar type entries in a normal leaf node and all types of entries in leaf nodes whose m is less than n, namely, empty slots exist in slot directory. However, it is still better to access int/float type entries (fixed length) by calculating key index instead of reading its entry offset from memory.
+
+
+5. Implementation Detail
+- Have you added your own source file (.cc or .h)? No
+
+- Have you implemented non-lazy deletion? Choose Yes or No: No
+
+- Have you implemented duplicated key handling that can span multiple pages? Choose Yes or No: No
+  If yes, please explain briefly how you have implemented this feature.
+
+- Other implementation details:
+	Insert: While insert first data entry into index file, we directly insert it into leaf node and set it as root.
+		For following insertions, we find position of inserted data entry from root to leaf node by using binary search.
+		Split pages: while page cannot hold any more data entry, we append one more page and move half of the data into new page and copy smallest
+			     value of appended page to its parent as a index value. While split happends in index level, after split page and move index values,
+			     we push up middle value of original data into its parent index.
+				
+		Inserting TypeInt and TypeReal: While Page cannot hold any more data entry or index records, first find appropriate position
+						for inserted data and insert it into current page. then remove half of data to newly appended page.
+		Inserting String: We check weather there is enough space in current page to insert first and then split. If there isn't enough space, 
+				  we split and then find appropriate position by using binary search and insert data.
+	Delete: We implemented lazy deletion here, while delete records, we set offset pointed to it to -1 and decrease number of key. While doing insertion, we check
+		weather the number of keys in current page equal to slotCount. If they are different, we doing compression on offset which means compact offset 
+		of directory to override -1 values but do not touch record itself in page.
+
+6. Other (optional)
+- Freely use this section to tell us about things that are related to the project 3, but not related to the other sections (optional)
+

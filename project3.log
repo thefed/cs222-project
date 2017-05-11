@@ -1,0 +1,274 @@
+rm -f *.a *.o *~ rbftest? rbftest??
+c++  -Wall -I.. -g -std=c++0x    -c -o pfm.o pfm.cc
+rm -f *.o *.a ixtest_?? ixtest_extra_??
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../rbf clean
+rm -f *.a *.o *~ rbftest? rbftest??
+c++  -Wall -I.. -g -std=c++0x    -c -o ix.o ix.cc
+ar rv libix.a ix.o
+ar: creating archive libix.a
+a - ix.o
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_01.o ixtest_01.cc
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../rbf librbf.a
+c++  -Wall -I.. -g -std=c++0x    -c -o pfm.o pfm.cc
+ar rv librbf.a pfm.o
+ar: creating archive librbf.a
+a - pfm.o
+c++  -Wall -I.. -g -std=c++0x    -c -o rbfm.o rbfm.cc
+rbfm.cc:690:9: warning: unused variable 'nameLength' [-Wunused-variable]
+    int nameLength;
+        ^
+1 warning generated.
+ar rv librbf.a rbfm.o
+a - rbfm.o
+g++   ixtest_01.o libix.a ../rbf/librbf.a   -o ixtest_01
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_02.o ixtest_02.cc
+g++   ixtest_02.o libix.a ../rbf/librbf.a   -o ixtest_02
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_03.o ixtest_03.cc
+g++   ixtest_03.o libix.a ../rbf/librbf.a   -o ixtest_03
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_04.o ixtest_04.cc
+g++   ixtest_04.o libix.a ../rbf/librbf.a   -o ixtest_04
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_05.o ixtest_05.cc
+g++   ixtest_05.o libix.a ../rbf/librbf.a   -o ixtest_05
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_06.o ixtest_06.cc
+g++   ixtest_06.o libix.a ../rbf/librbf.a   -o ixtest_06
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_07.o ixtest_07.cc
+g++   ixtest_07.o libix.a ../rbf/librbf.a   -o ixtest_07
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_08.o ixtest_08.cc
+g++   ixtest_08.o libix.a ../rbf/librbf.a   -o ixtest_08
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_09.o ixtest_09.cc
+g++   ixtest_09.o libix.a ../rbf/librbf.a   -o ixtest_09
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_10.o ixtest_10.cc
+g++   ixtest_10.o libix.a ../rbf/librbf.a   -o ixtest_10
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_11.o ixtest_11.cc
+g++   ixtest_11.o libix.a ../rbf/librbf.a   -o ixtest_11
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_12.o ixtest_12.cc
+g++   ixtest_12.o libix.a ../rbf/librbf.a   -o ixtest_12
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_13.o ixtest_13.cc
+ixtest_13.cc:58:7: warning: unused variable 'k' [-Wunused-variable]
+        char k = *(key+4);
+             ^
+1 warning generated.
+g++   ixtest_13.o libix.a ../rbf/librbf.a   -o ixtest_13
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_14.o ixtest_14.cc
+g++   ixtest_14.o libix.a ../rbf/librbf.a   -o ixtest_14
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_15.o ixtest_15.cc
+g++   ixtest_15.o libix.a ../rbf/librbf.a   -o ixtest_15
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_extra_01.o ixtest_extra_01.cc
+g++   ixtest_extra_01.o libix.a ../rbf/librbf.a   -o ixtest_extra_01
+c++  -Wall -I.. -g -std=c++0x    -c -o ixtest_extra_02.o ixtest_extra_02.cc
+g++   ixtest_extra_02.o libix.a ../rbf/librbf.a   -o ixtest_extra_02
+
+***** In IX Test Case 1 *****
+File [age_idx] cannot be reopened!
+***** IX Test Case 1 finished. The result will be examined. *****
+
+***** In IX Test Case 2 *****
+
+Before Insert - R W A: 0 0 0
+After Insert - R W A: 0 0 1
+Page I/O count of single insertion - R W A: 0 0 1
+
+{"keys": ["100: [(100, 101)]}
+***** IX Test Case 2 finished. The result will be examined. *****
+
+***** In IX Test Case 3 *****
+Before scan - R W A: 0 0 0
+Returned rid from a scan: 100 101
+count = 1
+After scan - R W A: 1 0 0
+Page I/O count of scan - R W A: 1 0 0
+***** IX Test Case 3 finished. The result will be examined. *****
+
+***** In IX Test Case 4 *****
+Before DeleteEntry - R W A: 0 0 0
+After DeleteEntry - R W A: 2 1 0
+Page I/O count of single deletion - R W A: 2 1 0
+***** IX Test Case 4 finished. The result will be examined. *****
+
+***** In IX Test Case 5 *****
+***** IX Test Case 5 finished. The result will be examined. *****
+
+***** In IX Test Case 6 *****
+1 - Returned rid: 0 1
+201 - Returned rid: 200 201
+401 - Returned rid: 400 401
+601 - Returned rid: 600 601
+801 - Returned rid: 800 801
+1001 - Returned rid: 1000 1001
+***** IX Test Case 6 finished. The result will be examined. *****
+
+***** In IX Test Case 7 *****
+1 - Returned rid: 0 1
+201 - Returned rid: 200 201
+401 - Returned rid: 400 401
+601 - Returned rid: 600 601
+801 - Returned rid: 800 801
+1001 - Returned rid: 1000 1001
+***** IX Test Case 7 finished. The result will be examined. *****
+
+***** In IX Test Case 8 *****
+100 - Returned rid: 5100 5101
+***** IX Test Case 8 finished. The result will be examined. *****
+
+***** In IX Test Case 9 *****
+500 - Returned rid: 500 500
+1000 - Returned rid: 1000 1000
+1500 - Returned rid: 1500 1500
+2000 - Returned rid: 2000 2000
+2001 - Returned rid: 6000 5500
+***** IX Test Case 9 finished. The result will be examined. *****
+
+***** In IX Test Case 10 *****
+10 - Returned rid: 10 11
+20 - Returned rid: 20 21
+30 - Returned rid: 30 31
+40 - Returned rid: 40 41
+50 - Returned rid: 50 51
+***** IX Test Case 10 finished. The result will be examined. *****
+
+***** In IX Test Case 11 *****
+Split root, new root id[513], root_key = 32512
+200000 inserted - rid: 200000 200001
+400000 inserted - rid: 400000 400001
+600000 inserted - rid: 600000 600001
+800000 inserted - rid: 800000 800001
+1000000 inserted - rid: 1000000 1000001
+
+200000 scanned. 
+400000 scanned. 
+600000 scanned. 
+800000 scanned. 
+1000000 scanned. 
+
+20000 deleted. 
+40000 deleted. 
+60000 deleted. 
+80000 deleted. 
+100000 deleted. 
+
+200000 scanned. 
+400000 scanned. 
+600000 scanned. 
+800000 scanned. 
+900000 scanned. 
+
+20000 inserted - rid: 199991 199992
+40000 inserted - rid: 399991 399992
+60000 inserted - rid: 599991 599992
+80000 inserted - rid: 799991 799992
+100000 inserted - rid: 999991 999992
+
+200000 scanned. 
+400000 scanned. 
+600000 scanned. 
+800000 scanned. 
+1000000 scanned. 
+***** IX Test Case 11 finished. The result will be examined. *****
+
+***** In IX Test Case 12 *****
+
+***** IX Test Case 12 finished. The result will be examined. *****
+
+***** In IX Test Case 13 *****
+IO count after insertion: R W A - 2873 1014 12
+
+t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, 20 scanned - returned rid: 878 878
+t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t, 
+IO count after scan: R W A - 2874 1014 12
+***** IX Test Case 13 finished. The result will be examined. *****
+
+***** In IX Test Case 14 *****
+
+{
+"keys": ["c(819)"],
+"children": [
+{"keys": ["a(819): [(1, 1)]", "b(819): [(2, 2)]"]},
+{"keys": ["c(819): [(3, 3)]", "d(819): [(4, 4)]", "e(819): [(5, 5)]"]}
+]
+}
+
+p4 = 4
+Split root, new root id[7], root_key = 3
+Split index page[2], push up (g, 7)
+
+
+////////////////////////////
+
+{
+"keys": ["g(819)"],
+"children": [
+{"keys": ["ccccccc", "e(819)"],
+"children": [
+{"keys": ["a(819): [(1, 1)]", "b(819): [(2, 2)]"]},
+{"keys": ["a(819): [(1, 1)]", "b(819): [(2, 2)]"]},
+{"keys": ["e(819): [(5, 5)]", "f(819): [(6, 6)]"]}
+]},
+{"keys": ["i(819)", "k(819)"],
+"children": [
+{"keys": ["g(819): [(7, 7)]", "h(819): [(8, 8)]"]},
+{"keys": ["i(819): [(9, 9)]", "j(819): [(10, 10)]"]},
+{"keys": ["k(819): [(11, 11)]", "l(819): [(12, 12)]", "m(819): [(13, 13)]"]}
+]}
+]
+}
+
+***** IX Test Case 14 finished. Please check the shape of the B+ Tree. *****
+
+***** In IX Test Case 15 *****
+{"keys": ["300: [(51, 2), (52, 3), (53, 4), (54, 5), (55, 6), (56, 7), (57, 8), (58, 9), (59, 10), (60, 11), (61, 12), (62, 13), (63, 14), (64, 15), (65, 16), (66, 17), (67, 18), (68, 19), (69, 20), (70, 21), (71, 22), (72, 23), (73, 24), (74, 25), (75, 26), (76, 27), (77, 28), (78, 29), (79, 30), (80, 31), (81, 32), (82, 33), (83, 34), (84, 35), (85, 36), (86, 37), (87, 38), (88, 39), (89, 40), (90, 41), (91, 42), (92, 43), (93, 44), (94, 45), (95, 46), (96, 47), (97, 48), (98, 49), (99, 50), (100, 51), (101, 52)]}
+***** IX Test Case 15 finished. Please check the shape of the B+ Tree. *****
+
+***** In IX Test Extra Case 1 *****
+100 - Returned rid: 1243 1243
+Number of scanned entries: 127
+Wrong entries output... The test failed
+IX_Test Case Extra 1 failed.
+
+***** In IX Test Case 2 *****
+p4 = 4
+Split root, new root id[7], root_key = 3
+Split index page[2], push up (g, 7)
+{
+"keys": ["g(819)"],
+"children": [
+{"keys": ["ccccccc", "e(819)"],
+"children": [
+{"keys": ["a(819): [(1, 1)]", "b(819): [(2, 2)]"]},
+{"keys": ["a(819): [(1, 1)]", "b(819): [(2, 2)]"]},
+{"keys": ["e(819): [(5, 5)]", "f(819): [(6, 6)]"]}
+]},
+{"keys": ["i(819)", "k(819)"],
+"children": [
+{"keys": ["g(819): [(7, 7)]", "h(819): [(8, 8)]"]},
+{"keys": ["i(819): [(9, 9)]", "j(819): [(10, 10)]"]},
+{"keys": ["k(819): [(11, 11)]", "l(819): [(12, 12)]", "m(819): [(13, 13)]"]}
+]}
+]
+}
+
+
+/////////////////
+
+{
+"keys": ["g(819)"],
+"children": [
+{"keys": ["ccccccc", "e(819)"],
+"children": [
+{"keys": ["a(819): [(1, 1)]"]},
+{"keys": ["a(819): [(1, 1)]"]},
+{"keys": ["e(819): [(5, 5)]", "f(819): [(6, 6)]"]}
+]},
+{"keys": ["i(819)", "k(819)"],
+"children": [
+{"keys": ["g(819): [(7, 7)]", "h(819): [(8, 8)]"]},
+{"keys": ["i(819): [(9, 9)]", "j(819): [(10, 10)]"]},
+{"keys": ["k(819): [(11, 11)]", "l(819): [(12, 12)]", "m(819): [(13, 13)]"]}
+]}
+]
+}
+
+IX_Test Case Extra 2 finished. Please check the shape of B+ Tree to make sure non lazy-deletion is applied.
+rm -f *.o *.a ixtest_?? ixtest_extra_??
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ../rbf clean
+rm -f *.a *.o *~ rbftest? rbftest??
+Wed May 10 18:20:11 PDT 2017
