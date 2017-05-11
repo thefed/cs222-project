@@ -28,8 +28,15 @@ FileHandle:
 RecordBasedFileManager (RBFM):
 - create/destroy/open/close File (use a private member: PagedFileManager *pfm = PagedFileManager::instance();)
 - CRUD operations of record: insertRecord, readRecord, updateRecord, deleteRecord
+-- update record has 3 cases: 
+--- new record is smaller than original, then shift following records backward if any
+--- new record is greater than original, but can still be fitted in that page, then shift its following records backward if any
+--- new record is greater than original, cannot be fitted in that page, then check all other pages for space, if no luck, append a new page, leave a mark in the original record, indicating the record is updated and moved to other place, refer the new page number and slot number for it (not the same indicators as deleted record
+-- delete record
+--- if target record can be found, remove it, shift following record backward, update slot directory
+--- if target record is deleted already, return failure code (re-deletion should fail)
+--- if it is moved to somewhere else, fetch the new page number and slot number, delete it recursively
 - readAttribute(attrName)
-
 
 ### project 2
 Relation Manager (RM):
