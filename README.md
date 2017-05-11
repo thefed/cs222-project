@@ -12,12 +12,12 @@ check run-test.sh for more details
 * project 3 (index manager): 2.9k
 * project 4 (query engine): 1.5k
 
-# summary of 4 projects
-# 4/22/2017
+## summary of 4 projects
+4/22/2017
 
-implemented APIs:
+## implemented APIs:
 
-# project 1
+### project 1
 class hierarchy:
 PagedFileManager (PFM):
 - createFile, destroyFile, openFile, closeFile
@@ -31,20 +31,20 @@ RecordBasedFileManager (RBFM):
 - readAttribute(attrName)
 
 
-# project 2
+### project 2
 Relation Manager (RM):
 - create/deleteCatalog, create/deleteTable
 - getAttributes(tableName)
 - insert/read/delete/update tuple (same as RBFM::CRUD)
 - scan (returns an iterator to allow the caller to call getNext())
 
-# project 3
+### project 3
 Index Manager (IX)
 - create/delete/update index file
 - insert/delete index entry (B+ tree)
 - index scan (all operators, getNext())
 
-# project 4
+### project 4
 Query Engine (QE)
 - relation manager (index file scan/create/delete)
 - implement the following query types (iterator interface)
