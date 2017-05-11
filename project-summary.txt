@@ -26,8 +26,15 @@ Relation Manager (RM):
 
 # project 3
 Index Manager (IX)
-
+- create/delete/update index file
+- insert/delete index entry (B+ tree)
+- index scan (all operators, getNext())
 
 # project 4
 Query Engine (QE)
-
+- relation manager (index file scan/create/delete)
+- implement the following query types (iterator interface)
+- filter (selected rows)
+- project (selected columns)
+- join (block nested-loop join, index nested-loop join, grace hash join)
+- aggregate (min, max, sum, avg, count)
