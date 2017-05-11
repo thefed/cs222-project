@@ -46,7 +46,7 @@ $(CODEROOT)/ix/libix.a:
 .PHONY: clean
 clean:
 	@#-rm -f qetest_01 qetest_02 qetest_03 qetest_04 qetest_05 qetest_06 qetest_07 qetest_08 qetest_09 qetest_10 qetest_11 qetest_12 qetest_13 qetest_14 qetest_15 qetest_16 
-	-rm -f *.a *.o *~ Tables* Columns* left* right* large*	qetest_??
+	-rm -f *.a *.o *~ Tables* Columns* left* right* large*	qetest_?? group
 	@$(MAKE) -C $(CODEROOT)/rm clean
 	@$(MAKE) -C $(CODEROOT)/ix clean 
 	@$(MAKE) -C $(CODEROOT)/rbf clean 
